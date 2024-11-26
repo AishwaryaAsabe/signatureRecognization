@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e49bf1;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* Landing Page styling */
+        .hero {
+            background-color:#e49bf1;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .hero a {
+            display: inline-block;
+            background-color: white;
+            color: #e49bf1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hero a:hover {
+            background-color: #e49bf1;
+            color: white;
+        }
+
+        /* Container styling for detection */
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #caff33;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color:#ca40e3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">SignatureApp</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#upload">Upload</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero" id="hero">
+        <h1>Welcome to Signature Recognition</h1>
+        <p>Easily recognize and validate signatures with our advanced AI technology. Upload your signature image and let our app do the rest!</p>
+        <a href="#upload">Get Started</a>
+    </div>
+
+    <!-- Detection Section -->
+    <div class="container" id="upload">
+        <h1>Upload a Signature Image for Recognition</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/png, image/jpeg" required>
+            <br>
+            <input type="submit" value="Upload and Recognize">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        &copy; 2024 Signature Recognition App. All rights reserved. Contact us at support@signatureapp.com.
+    </footer>
+
+</body>
+</html>
